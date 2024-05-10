@@ -9,7 +9,12 @@ def login(login_id, login_pw):
     session.headers.update(headers)
 
     url_login_page = 'https://hi.hana.hs.kr/member/login.asp'
-    session.get(url_login_page)
+
+    try:
+        session.get(url_login_page)
+    except ConnectionError:
+        print('인터넷 연결이 원활하지 않습니다. ')
+        return
 
     url_login_proc = 'https://hi.hana.hs.kr/proc/login_proc.asp'
     login_data = {'login_id': login_id, 'login_pw': login_pw, 'x': str(randint(10, 99)), 'y': str(randint(10, 99))}

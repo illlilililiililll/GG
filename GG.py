@@ -45,7 +45,7 @@ def GG(id, pw):
     return util.pretty_print(sorted_list)
 
 if __name__ == '__main__':
-    file_path = os.path.dirname(os.path.abspath(__file__) + '/GG.txt')
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'GG.txt')
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(GG(data.id, data.pw))
     print('파일이 저장되었습니다')
