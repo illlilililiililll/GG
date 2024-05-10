@@ -1,2 +1,2 @@
-id = "your_id"
-pw = "your_pw"
+id = 'kcwrenew22c'
+pw = 'password7116'
