@@ -1,3 +1,4 @@
+import os
 from bs4 import BeautifulSoup
 from collections import defaultdict
 import subprocess
@@ -44,7 +45,8 @@ def GG(id, pw):
     return util.pretty_print(sorted_list)
 
 if __name__ == '__main__':
-    with open('GG.txt', 'w', encoding='utf-8') as f:
+    file_path = os.path.dirname(os.path.abspath(__file__) + '/GG.txt')
+    with open(file_path, 'w', encoding='utf-8') as f:
         f.write(GG(data.id, data.pw))
     print('파일이 저장되었습니다')
-    process = subprocess.Popen(['GG.txt'], shell=True)
+    process = subprocess.Popen([file_path], shell=True)
