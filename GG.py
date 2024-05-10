@@ -7,6 +7,8 @@ import util
 
 def GG(id, pw):
     session = util.login(id, pw)
+    if not session:
+        exit()
     print('로그인되었습니다')
 
     data = []
